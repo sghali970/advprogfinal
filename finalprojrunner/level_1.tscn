@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://doq3u1qcwefrk"]
+[gd_scene load_steps=24 format=3 uid="uid://doq3u1qcwefrk"]
 
 [ext_resource type="PackedScene" uid="uid://b2h1kb7gbh1t2" path="res://player.tscn" id="1_3w7u0"]
 [ext_resource type="Texture2D" uid="uid://bo4f7bcjtsmaj" path="res://1 Tiles/Tileset.png" id="1_oraoq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://gobmove.gd" id="5_a77qb"]
 [ext_resource type="PackedScene" uid="uid://de15ldah0qukr" path="res://coin.tscn" id="5_dofbs"]
 [ext_resource type="PackedScene" uid="uid://bukip6cxgtopl" path="res://coincounter.tscn" id="6_6mdqq"]
+[ext_resource type="PackedScene" uid="uid://ccnrbbs1qcw4u" path="res://livescounter.tscn" id="7_hjobp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38vff"]
 texture = ExtResource("1_oraoq")
@@ -822,5 +823,11 @@ offset_left = 1077.0
 offset_top = 8.0
 offset_right = 1077.0
 offset_bottom = 8.0
+
+[node name="Control2" parent="CanvasLayer" instance=ExtResource("7_hjobp")]
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 7.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

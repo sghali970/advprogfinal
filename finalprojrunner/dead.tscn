@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctq76eplgy5nx"]
+
+[ext_resource type="Script" path="res://dead.gd" id="1_f10gi"]
+[ext_resource type="Texture2D" uid="uid://djvsbetqdvtds" path="res://red.png" id="1_xhrhy"]
+
+[node name="Control" type="Control"]
+modulate = Color(0.662745, 0.188235, 0.176471, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f10gi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 96.0
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(1298.5, -637.5)
+scale = Vector2(6.9043, 3.19336)
+texture = ExtResource("1_xhrhy")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1093.0
+offset_top = 371.0
+offset_right = 1185.0
+offset_bottom = 397.0
+scale = Vector2(5, 5)
+text = "Game Over!"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -111,7 +111,7 @@ animations = [{
 size = Vector2(17.5, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqupk"]
-size = Vector2(61.125, 11)
+size = Vector2(13.5625, 11)
 
 [sub_resource type="Animation" id="Animation_rvmee"]
 length = 0.001
@@ -169,7 +169,7 @@ shape = SubResource("RectangleShape2D_hkbch")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player"]]
-position = Vector2(43, 0)
+position = Vector2(19.2188, 0)
 shape = SubResource("RectangleShape2D_jqupk")
 disabled = true
 

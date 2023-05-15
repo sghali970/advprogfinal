@@ -28,8 +28,8 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
 texture_filter = 1
-position = Vector2(33, 26.5)
-scale = Vector2(1.99306, 1.9537)
+position = Vector2(45, 60)
+scale = Vector2(4.99653, 5.12346)
 texture = ExtResource("2_nqdw3")
 
 [node name="startButton" type="Button" parent="VBoxContainer"]
@@ -47,11 +47,12 @@ text = "Options"
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = 284.0
-offset_top = 67.0
-offset_right = 505.0
-offset_bottom = 155.0
+offset_left = 956.0
+offset_top = 520.0
+offset_right = 1177.0
+offset_bottom = 608.0
 scale = Vector2(5, 5)
 text = "Infinite Runner"
 
 [connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]

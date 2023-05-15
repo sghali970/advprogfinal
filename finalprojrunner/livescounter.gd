@@ -1,11 +1,5 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#updates number of lives
 func _process(delta):
 	$Label.text = "Lives: " + str(Globals.lives)

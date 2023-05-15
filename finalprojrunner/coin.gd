@@ -1,16 +1,6 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+#adding one to global variable each time player collides with coin
 func _on_area_2d_body_entered(body):
 	Globals.coins_num += 1
 	queue_free()

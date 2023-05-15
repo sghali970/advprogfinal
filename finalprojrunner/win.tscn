@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfkwrcxg833kp"]
+
+[ext_resource type="Texture2D" uid="uid://c0apty3jxqhvy" path="res://Background.png" id="1_6wwr0"]
+[ext_resource type="Script" path="res://win.gd" id="1_c0vf2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0vf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1358, 618)
+scale = Vector2(5.17014, 4.53395)
+texture = ExtResource("1_6wwr0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 286.0
+offset_right = 1163.0
+offset_bottom = 338.0
+scale = Vector2(4, 4)
+text = "Congrats!
+You have completed Level 1"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

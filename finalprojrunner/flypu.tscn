@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://btqdpqkiyn4id"]
+
+[ext_resource type="Texture2D" uid="uid://1v1ymlxl57lw" path="res://00-dropicons.png" id="1_p1t5w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24b4x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpqel"]
+atlas = ExtResource("1_p1t5w")
+region = Rect2(180, 144, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8el6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpqel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." groups=["Powerup"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_24b4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8el6o")

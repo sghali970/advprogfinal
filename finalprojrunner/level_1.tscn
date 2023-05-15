@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://doq3u1qcwefrk"]
+[gd_scene load_steps=34 format=3 uid="uid://doq3u1qcwefrk"]
 
 [ext_resource type="PackedScene" uid="uid://b2h1kb7gbh1t2" path="res://player.tscn" id="1_3w7u0"]
 [ext_resource type="Texture2D" uid="uid://bo4f7bcjtsmaj" path="res://1 Tiles/Tileset.png" id="1_oraoq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bukip6cxgtopl" path="res://coincounter.tscn" id="6_6mdqq"]
 [ext_resource type="PackedScene" uid="uid://ccnrbbs1qcw4u" path="res://livescounter.tscn" id="7_hjobp"]
 [ext_resource type="Texture2D" uid="uid://4rdt5mufgdc" path="res://Monster_Creatures_Fantasy(Version 1.3)/Flying eye/Attack3.png" id="8_rs5pu"]
+[ext_resource type="PackedScene" uid="uid://btqdpqkiyn4id" path="res://flypu.tscn" id="9_0fg4j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38vff"]
 texture = ExtResource("1_oraoq")
@@ -902,6 +903,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat"]
 position = Vector2(319, -143)
 shape = SubResource("RectangleShape2D_6mr52")
+
+[node name="Node2D2" parent="." instance=ExtResource("9_0fg4j")]
+position = Vector2(75, -48)
 
 [connection signal="body_entered" from="goblin" to="goblin" method="_on_body_entered"]
 [connection signal="body_entered" from="bat" to="bat" method="_on_body_entered"]

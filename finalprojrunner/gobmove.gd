@@ -26,7 +26,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("work")
 	if body.is_in_group("Player"):
 		Globals.lives -= 1
 		self.queue_free()

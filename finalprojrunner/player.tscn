@@ -150,6 +150,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+modulate = Color(0, 0.815686, 0.505882, 1)
 script = ExtResource("1_fed3k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -165,6 +166,7 @@ position = Vector2(-1.75, 0)
 shape = SubResource("RectangleShape2D_hkbch")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 

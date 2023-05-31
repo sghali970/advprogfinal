@@ -44,6 +44,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Options"
 
+[node name="shopButton" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Shop"
+
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 2
@@ -56,3 +61,4 @@ text = "Infinite Runner"
 
 [connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/shopButton" to="." method="_on_shop_button_pressed"]

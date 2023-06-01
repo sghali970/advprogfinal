@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://tg75roknjxbl"]
+
+[ext_resource type="PackedScene" uid="uid://b2h1kb7gbh1t2" path="res://player.tscn" id="2_tymuo"]
+[ext_resource type="PackedScene" uid="uid://bglrjq1q71ogu" path="res://scenetest3.tscn" id="2_xqp5g"]
+[ext_resource type="PackedScene" uid="uid://bjqb47aryed2o" path="res://scenetest2.tscn" id="3_epdxp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." groups=["play"] instance=ExtResource("2_tymuo")]
+position = Vector2(-2, -84)
+
+[node name="Node2D2" parent="." instance=ExtResource("3_epdxp")]
+
+[node name="Node2D" parent="Node2D2" instance=ExtResource("2_xqp5g")]

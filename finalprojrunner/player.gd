@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum State {IDLE, JUMP, ATTACK, DIE, DOUBLEJUMP}
 const SPEED = 60.0
-const JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -400.0
 
 var curstate = State.IDLE
 var state_time = 0.0
@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():	
-		velocity.y = JUMP_VELOCITY
+		velocity.y = Globals.JUMP_VELOCITY
 	move_and_slide()
 
 

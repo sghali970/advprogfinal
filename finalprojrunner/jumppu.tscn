@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7lso3sla4xm7"]
+
+[ext_resource type="Script" path="res://jumppu.gd" id="1_3tfxd"]
+[ext_resource type="Texture2D" uid="uid://1v1ymlxl57lw" path="res://00-dropicons.png" id="2_pk4hu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf85p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agjke"]
+atlas = ExtResource("2_pk4hu")
+region = Rect2(108, 108, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lr1um"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agjke")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3tfxd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_mf85p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_lr1um")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

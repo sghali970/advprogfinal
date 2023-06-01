@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://btqdpqkiyn4id"]
+[gd_scene load_steps=6 format=3 uid="uid://btqdpqkiyn4id"]
 
+[ext_resource type="Script" path="res://flypu.gd" id="1_016ay"]
 [ext_resource type="Texture2D" uid="uid://1v1ymlxl57lw" path="res://00-dropicons.png" id="1_p1t5w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24b4x"]
@@ -20,8 +21,9 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_016ay")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Powerup"]]
+[node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_24b4x")
@@ -29,3 +31,5 @@ shape = SubResource("CapsuleShape2D_24b4x")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8el6o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -156,13 +156,11 @@ script = ExtResource("1_fed3k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_y0prg")
-animation = &"attack"
+animation = &"move"
 autoplay = "move"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.75, 0)
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_hkbch")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,21 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bunuvo05imi4l"]
+[gd_scene load_steps=5 format=3 uid="uid://bunuvo05imi4l"]
 
 [ext_resource type="Script" path="res://equip1.gd" id="1_vgkul"]
+[ext_resource type="Texture2D" uid="uid://da3n6ttkme5fs" path="res://characters/AnimationSheet_Character.png" id="2_nfmui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wbxn"]
+atlas = ExtResource("2_nfmui")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7gjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wbxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vgkul")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 1155.0
-offset_bottom = 648.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "equip"
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+offset_right = 1805.0
+offset_bottom = 1046.0
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "play"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/VBoxContainer"]
+modulate = Color(0, 0.815686, 0.505882, 1)
+texture_filter = 1
+position = Vector2(804, 544)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_l7gjq")
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[node name="Button" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D"]
+offset_left = 49.0667
+offset_top = -60.0
+offset_right = 110.067
+offset_bottom = -29.0
+text = "Equip"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D"]
+offset_left = 48.6667
+offset_top = 31.2
+offset_right = 122.667
+offset_bottom = 62.2
+text = "Unequip"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D"]
+offset_left = -86.2667
+offset_top = 29.3333
+offset_right = -34.2667
+offset_bottom = 60.3333
+text = "Buy"
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D"]
+offset_left = -83.0667
+offset_top = -63.0667
+offset_right = -38.0667
+offset_bottom = -32.0667
+text = "Back"
+
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D/Button4" to="." method="_on_button_4_pressed"]

@@ -1,6 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgdsq4pmncj43"]
+[gd_scene load_steps=9 format=3 uid="uid://cgdsq4pmncj43"]
 
 [ext_resource type="Script" path="res://shop.gd" id="1_48oeh"]
+[ext_resource type="Texture2D" uid="uid://da3n6ttkme5fs" path="res://characters/AnimationSheet_Character.png" id="2_wee8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wbxn"]
+atlas = ExtResource("2_wee8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oaa58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wbxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_676c6"]
+atlas = ExtResource("2_wee8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekuqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_676c6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jruqi"]
+atlas = ExtResource("2_wee8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oivyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jruqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_48oeh")
@@ -9,13 +55,61 @@ script = ExtResource("1_48oeh")
 offset_right = 1163.0
 offset_bottom = 653.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "test1"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer"]
+modulate = Color(0, 0.815686, 0.505882, 1)
+texture_filter = 1
+position = Vector2(343, 229)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oaa58")
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "test2"
+[node name="Button" type="Button" parent="VBoxContainer/AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.352941)
+offset_left = -14.75
+offset_top = -15.75
+offset_right = 11.25
+offset_bottom = 18.25
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="VBoxContainer"]
+modulate = Color(0.317647, 0.34902, 0.898039, 1)
+texture_filter = 1
+position = Vector2(784, 222)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ekuqa")
+
+[node name="Button2" type="Button" parent="VBoxContainer/AnimatedSprite2D2"]
+modulate = Color(1, 1, 1, 0.501961)
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 12.0
+offset_bottom = 18.0
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="VBoxContainer"]
+modulate = Color(0.976471, 0.933333, 0, 1)
+texture_filter = 1
+position = Vector2(341, 476)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oivyx")
+
+[node name="Button" type="Button" parent="VBoxContainer/AnimatedSprite2D3"]
+modulate = Color(1, 1, 1, 0.482353)
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 11.0
+offset_bottom = 18.0
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="VBoxContainer"]
+modulate = Color(0.803922, 0.588235, 0.882353, 0.486275)
+texture_filter = 1
+position = Vector2(794, 465)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oivyx")
+
+[node name="Button" type="Button" parent="VBoxContainer/AnimatedSprite2D4"]
+modulate = Color(1, 1, 1, 0.694118)
+offset_left = -11.0
+offset_top = -15.0
+offset_right = 11.0
+offset_bottom = 19.0
+
+[connection signal="pressed" from="VBoxContainer/AnimatedSprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AnimatedSprite2D2/Button2" to="." method="_on_button_2_pressed"]

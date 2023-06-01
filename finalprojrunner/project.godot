@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Globals="*res://globals.gd"
 
+[display]
+
+window/stretch/scale=0.5
+
 [input]
 
 attack={

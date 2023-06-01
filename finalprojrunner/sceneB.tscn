@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwrlwna47wfhu"]
+[gd_scene load_steps=6 format=3 uid="uid://dwrlwna47wfhu"]
 
-[ext_resource type="Script" path="res://sceneB.gd" id="1_6w8ae"]
 [ext_resource type="Texture2D" uid="uid://bo4f7bcjtsmaj" path="res://1 Tiles/Tileset.png" id="1_aj2ua"]
 [ext_resource type="Texture2D" uid="uid://djvsbetqdvtds" path="res://red.png" id="2_b3qih"]
 
@@ -829,7 +828,6 @@ sources/0 = SubResource("TileSetAtlasSource_38vff")
 size = Vector2(24, 135)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_6w8ae")
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1

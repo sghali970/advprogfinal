@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7lso3sla4xm7"]
+[gd_scene load_steps=6 format=3 uid="uid://cvr34nvbpcsgu"]
 
-[ext_resource type="Script" path="res://jumppu.gd" id="1_3tfxd"]
+[ext_resource type="Script" path="res://flypu.gd" id="1_hin0t"]
 [ext_resource type="Texture2D" uid="uid://1v1ymlxl57lw" path="res://00-dropicons.png" id="2_pk4hu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mf85p"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24b4x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_agjke"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpqel"]
 atlas = ExtResource("2_pk4hu")
-region = Rect2(108, 108, 36, 36)
+region = Rect2(180, 144, 36, 36)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lr1um"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8el6o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_agjke")
+"texture": SubResource("AtlasTexture_dpqel")
 }],
 "loop": true,
 "name": &"default",
@@ -21,16 +21,15 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_3tfxd")
+script = ExtResource("1_hin0t")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1.5, 1.5)
-shape = SubResource("CircleShape2D_mf85p")
+shape = SubResource("CapsuleShape2D_24b4x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_lr1um")
+sprite_frames = SubResource("SpriteFrames_8el6o")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

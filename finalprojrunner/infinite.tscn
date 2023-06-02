@@ -1,10 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgfj0swp48rti"]
+[gd_scene load_steps=3 format=3 uid="uid://cy3fnkha5k2ri"]
 
-[ext_resource type="Script" path="res://infinite.gd" id="1_mt00i"]
 [ext_resource type="PackedScene" uid="uid://b2h1kb7gbh1t2" path="res://player.tscn" id="2_8foyv"]
 
+[sub_resource type="GDScript" id="GDScript_lj0mj"]
+script/source = "extends Node2D
+
+var sceneB = preload(\"res://sceneB.tscn\")
+
+var spawn_position = global_position
+var gw = 80
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func spawn_scene():
+	var spawn_scene_instance = sceneB.instantiate()
+	add_child(spawn_scene_instance)
+	spawn_scene_instance.global_positon.x=spawn_position.x
+	
+	spawn_position.x += gw
+"
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_mt00i")
+script = SubResource("GDScript_lj0mj")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_8foyv")]
 position = Vector2(15, -95)

@@ -1,13 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm58ps12lhmvd"]
+[gd_scene load_steps=8 format=3 uid="uid://cm58ps12lhmvd"]
 
 [ext_resource type="PackedScene" uid="uid://b2h1kb7gbh1t2" path="res://player.tscn" id="1_1v15r"]
 [ext_resource type="Script" path="res://controller.gd" id="1_xo6dj"]
 [ext_resource type="PackedScene" uid="uid://dgq5m5ixw4mif" path="res://sceneA.tscn" id="2_vad75"]
+[ext_resource type="PackedScene" uid="uid://bukip6cxgtopl" path="res://coincounter.tscn" id="5_fp48j"]
+[ext_resource type="PackedScene" uid="uid://ccnrbbs1qcw4u" path="res://livescounter.tscn" id="6_fd5w0"]
+[ext_resource type="PackedScene" uid="uid://dru0f6s2urqdj" path="res://score.tscn" id="7_f6y2b"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ag2xj"]
+a = Vector2(29956, 470)
+b = Vector2(-7, 294)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xo6dj")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_1v15r")]
 position = Vector2(15, -57)
 
 [node name="Node2D" parent="." instance=ExtResource("2_vad75")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_ag2xj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_fp48j")]
+offset_left = 2283.0
+offset_top = 24.0
+offset_right = 2326.0
+offset_bottom = 3.0
+scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" parent="CanvasLayer" instance=ExtResource("6_fd5w0")]
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 7.0
+scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
+
+[node name="Control3" parent="CanvasLayer" instance=ExtResource("7_f6y2b")]
+offset_left = 1384.0
+offset_top = 13.0
+offset_right = 756.0
+offset_bottom = -335.0
+scale = Vector2(4, 4)
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

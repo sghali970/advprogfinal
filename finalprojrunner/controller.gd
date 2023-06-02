@@ -1,10 +1,12 @@
 extends Node2D
 
 var counter = 0
-var loc = 830
+var loc = 860
 var sceneA = preload("res://sceneA.tscn")
 var sceneB = preload("res://sceneB.tscn")
-var SCENES = [sceneA, sceneB]
+var sceneC = preload("res://sceneC.tscn")
+var sceneD = preload("res://sceneD.tscn")
+var SCENES = [sceneA, sceneB, sceneC, sceneD]
 
 var spawn_pos = global_position
 var gw = 860
@@ -17,7 +19,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print($CharacterBody2D.position.x)
 	if $CharacterBody2D.position.x > 80+counter:
 		spawn_scene()
 		counter += 830
@@ -32,3 +33,7 @@ func spawn_scene():
 	spawn_scene_instance.global_position.x = loc
 	loc+= 830
 	
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().change_scene_to_file("res://dead.tscn")

@@ -58,7 +58,7 @@ offset_left = -133.2
 offset_top = 46.9333
 offset_right = -95.2
 offset_bottom = 77.9333
-text = "Buy"
+text = "Buy: $10"
 
 [node name="Button4" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D4"]
 offset_left = -135.867

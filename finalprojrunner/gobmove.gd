@@ -9,7 +9,7 @@ var final_position : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#stating the start position as well as the final position
-	$AnimatedSprite2D.flip_h = true
+	#$AnimatedSprite2D.flip_h = true
 	start_position = global_position
 	final_position = start_position + move_direction
 

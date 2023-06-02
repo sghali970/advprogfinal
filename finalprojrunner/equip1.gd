@@ -1,6 +1,6 @@
 extends Node2D
 
-var item1price = 100
+var item1price = 30
 
 func _on_button_pressed():
 	if Globals.item1count == 1:

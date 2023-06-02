@@ -15,3 +15,7 @@ func _on_options_button_pressed():
 func _on_shop_button_pressed():
 	print(Globals.coins_num)
 	get_tree().change_scene_to_file("res://shop.tscn")
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://controller.tscn")

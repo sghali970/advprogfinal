@@ -35,7 +35,7 @@ offset_bottom = 1200.0
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Control/VBoxContainer"]
 modulate = Color(0.317647, 0.34902, 0.898039, 1)
 texture_filter = 1
-position = Vector2(980, 510)
+position = Vector2(1250, 510)
 scale = Vector2(7.5, 7.5)
 sprite_frames = SubResource("SpriteFrames_0tutn")
 
@@ -51,7 +51,7 @@ offset_left = -117.2
 offset_top = 44.6667
 offset_right = -66.2
 offset_bottom = 82.6667
-text = "Buy"
+text = "Buy: $25"
 
 [node name="Button3" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D2"]
 offset_left = 52.2667

@@ -1062,18 +1062,6 @@ position = Vector2(12, -31)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("6_6mdqq")]
-offset_left = 2450.0
-offset_top = 29.0
-offset_right = 2493.0
-offset_bottom = 8.0
-
-[node name="Control2" parent="CanvasLayer" instance=ExtResource("7_hjobp")]
-offset_left = 10.0
-offset_top = 7.0
-offset_right = 10.0
-offset_bottom = 7.0
-
 [node name="Control3" parent="CanvasLayer" instance=ExtResource("8_matxx")]
 offset_left = 1540.0
 offset_top = 23.0
@@ -1081,6 +1069,21 @@ offset_right = 912.0
 offset_bottom = -325.0
 scale = Vector2(4, 4)
 size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_6mdqq")]
+offset_left = 2450.0
+offset_top = 29.0
+offset_right = 2493.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" parent="CanvasLayer" instance=ExtResource("7_hjobp")]
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 7.0
+metadata/_edit_use_anchors_ = true
 
 [node name="bat" type="Area2D" parent="." groups=["Hit"]]
 script = ExtResource("5_a77qb")
@@ -1128,7 +1131,7 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1440, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1962, 873)
+position = Vector2(1986, 588)
 scale = Vector2(6.93055, 6.94753)
 texture = ExtResource("11_106mm")
 

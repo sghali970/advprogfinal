@@ -1,6 +1,6 @@
 extends Node2D
 
-var item2price = 50
+var item2price = 25
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://shop.tscn")

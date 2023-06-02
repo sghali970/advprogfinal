@@ -150,7 +150,6 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-modulate = Color(0, 0.815686, 0.505882, 1)
 script = ExtResource("1_fed3k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

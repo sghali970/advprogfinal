@@ -4,7 +4,11 @@ extends Node
 var coins_num = 25
 var lives = 3
 
+var scores
+
 var mod = 'f29085'
+
+var jump_num = 0
 
 var item1count = 0
 

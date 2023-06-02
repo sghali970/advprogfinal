@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://facrcvsy2m82"]
+
+[ext_resource type="Script" path="res://equip3.gd" id="1_j2lcx"]
+[ext_resource type="Texture2D" uid="uid://da3n6ttkme5fs" path="res://characters/AnimationSheet_Character.png" id="1_kf3jv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jruqi"]
+atlas = ExtResource("1_kf3jv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3thr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jruqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j2lcx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1995.0
+offset_bottom = 1064.0
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Control/VBoxContainer"]
+modulate = Color(0.976471, 0.933333, 0, 1)
+texture_filter = 1
+position = Vector2(1058, 588)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_3thr4")
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D3"]
+offset_left = 52.0
+offset_top = -74.8
+offset_right = 104.0
+offset_bottom = -43.8
+text = "Equip"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D3"]
+offset_left = 45.2
+offset_top = 46.9333
+offset_right = 119.2
+offset_bottom = 77.9333
+text = "Unequip"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D3"]
+offset_left = -123.067
+offset_top = 50.1333
+offset_right = -85.0667
+offset_bottom = 81.1333
+text = "Buy"
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D3"]
+offset_left = -118.8
+offset_top = -71.3333
+offset_right = -73.8
+offset_bottom = -40.3333
+text = "Back"
+
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D3/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D3/Button4" to="." method="_on_button_4_pressed"]

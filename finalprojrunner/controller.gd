@@ -21,16 +21,14 @@ func _process(delta):
 	if $CharacterBody2D.position.x > 80+counter:
 		spawn_scene()
 		counter += 830
-
+		
 func spawn_scene():
+	
 	var spawn_scene_instance = SCENES.pick_random().instantiate()
-	
-	
+	var holder = spawn_scene_instance 
 	add_child(spawn_scene_instance)
 	#spawn_scene_instance.global_positon.x=spawn_position.x
 	spawn_scene_instance.global_position.y = 0
 	spawn_scene_instance.global_position.x = loc
 	loc+= 830
 	
-
-

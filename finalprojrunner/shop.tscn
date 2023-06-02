@@ -90,7 +90,7 @@ position = Vector2(341, 476)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oivyx")
 
-[node name="Button" type="Button" parent="VBoxContainer/AnimatedSprite2D3"]
+[node name="Button3" type="Button" parent="VBoxContainer/AnimatedSprite2D3"]
 modulate = Color(1, 1, 1, 0.482353)
 offset_left = -11.0
 offset_top = -14.0
@@ -104,12 +104,29 @@ position = Vector2(794, 465)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oivyx")
 
-[node name="Button" type="Button" parent="VBoxContainer/AnimatedSprite2D4"]
+[node name="Button4" type="Button" parent="VBoxContainer/AnimatedSprite2D4"]
 modulate = Color(1, 1, 1, 0.694118)
 offset_left = -11.0
 offset_top = -15.0
 offset_right = 11.0
 offset_bottom = 19.0
 
+[node name="Button5" type="Button" parent="."]
+offset_left = 53.0
+offset_top = 35.0
+offset_right = 163.0
+offset_bottom = 87.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 527.0
+offset_top = 23.0
+offset_right = 758.0
+offset_bottom = 148.0
+text = "Shop"
+
 [connection signal="pressed" from="VBoxContainer/AnimatedSprite2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/AnimatedSprite2D2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/AnimatedSprite2D3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/AnimatedSprite2D4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

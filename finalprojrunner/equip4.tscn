@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs1flar8w4hlp"]
+
+[ext_resource type="Script" path="res://equip4.gd" id="1_lpq2x"]
+[ext_resource type="Texture2D" uid="uid://da3n6ttkme5fs" path="res://characters/AnimationSheet_Character.png" id="2_sst4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jruqi"]
+atlas = ExtResource("2_sst4d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ara6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jruqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lpq2x")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 2085.0
+offset_bottom = 1094.0
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Control/VBoxContainer"]
+modulate = Color(0.803922, 0.588235, 0.882353, 0.486275)
+texture_filter = 1
+position = Vector2(1112, 609)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_8ara6")
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D4"]
+offset_left = 63.3333
+offset_top = -72.9333
+offset_right = 115.333
+offset_bottom = -41.9333
+text = "Equip"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D4"]
+offset_left = 53.8667
+offset_top = 47.4667
+offset_right = 127.867
+offset_bottom = 78.4667
+text = "Unequip"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D4"]
+offset_left = -133.2
+offset_top = 46.9333
+offset_right = -95.2
+offset_bottom = 77.9333
+text = "Buy"
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer/AnimatedSprite2D4"]
+offset_left = -135.867
+offset_top = -77.7333
+offset_right = -90.8667
+offset_bottom = -46.7333
+text = "Back"
+
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D4/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D4/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D4/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/AnimatedSprite2D4/Button4" to="." method="_on_button_4_pressed"]

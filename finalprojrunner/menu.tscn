@@ -68,9 +68,9 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 2
 offset_left = 956.0
-offset_top = 520.0
+offset_top = 367.0
 offset_right = 1177.0
-offset_bottom = 608.0
+offset_bottom = 455.0
 scale = Vector2(5, 5)
 text = "Infinite Runner"
 

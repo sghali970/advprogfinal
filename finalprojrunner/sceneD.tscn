@@ -946,7 +946,8 @@ position = Vector2(113, -17)
 
 [node name="goblin" type="Area2D" parent="." groups=["Hit"]]
 script = ExtResource("4_5s8ih")
-move_direction = Vector2(-60, 0)
+move_speed = 0.0
+move_direction = Vector2(35, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="goblin"]
 texture_filter = 1
@@ -960,7 +961,8 @@ shape = SubResource("RectangleShape2D_gn875")
 
 [node name="goblin2" type="Area2D" parent="." groups=["Hit"]]
 script = ExtResource("4_5s8ih")
-move_direction = Vector2(-60, 0)
+move_speed = 0.0
+move_direction = Vector2(-30, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="goblin2"]
 texture_filter = 1

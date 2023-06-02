@@ -1006,22 +1006,23 @@ position = Vector2(422, 15)
 
 [node name="goblin" type="Area2D" parent="." groups=["Hit"]]
 script = ExtResource("4_073h7")
-move_direction = Vector2(-60, 0)
+move_speed = 0.0
+move_direction = Vector2(25, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="goblin"]
 texture_filter = 1
-position = Vector2(740, 68)
+position = Vector2(711, 67)
 sprite_frames = SubResource("SpriteFrames_5ew5y")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goblin"]
-position = Vector2(743, 71)
+position = Vector2(711, 74)
 shape = SubResource("RectangleShape2D_orauw")
 
 [node name="bat2" type="Area2D" parent="." groups=["Hit"]]
-position = Vector2(400, 0)
+position = Vector2(400, -70)
 script = ExtResource("4_073h7")
-move_direction = Vector2(0, -40)
+move_direction = Vector2(0, -30)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bat2"]
 texture_filter = 1

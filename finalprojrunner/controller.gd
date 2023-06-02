@@ -1,7 +1,9 @@
 extends Node2D
 
+#counter for spawning
 var counter = 0
-var loc = 860
+#changing location by this amount
+var loc = 950
 var sceneA = preload("res://sceneA.tscn")
 var sceneB = preload("res://sceneB.tscn")
 var sceneC = preload("res://sceneC.tscn")
@@ -9,22 +11,16 @@ var sceneD = preload("res://sceneD.tscn")
 var SCENES = [sceneA, sceneB, sceneC, sceneD]
 
 var spawn_pos = global_position
-var gw = 860
-var time = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#start spawning once character is past 80 pixels and add every 830 pixels
 	if $CharacterBody2D.position.x > 80+counter:
 		spawn_scene()
 		counter += 830
 		
 func spawn_scene():
-	
+	#spawn a scene and add 950 to the x position for each scene
 	var spawn_scene_instance = SCENES.pick_random().instantiate()
 	var holder = spawn_scene_instance 
 	add_child(spawn_scene_instance)
